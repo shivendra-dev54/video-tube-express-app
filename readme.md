@@ -65,13 +65,16 @@ Or for normal run: `npm start `
 
 ### Health Check:
 
-**1. http://localhost:64000/api/v1/healthcheck/**<br>
+**1. GET http://localhost:64000/api/v1/healthcheck/**<br>
     This is the endpoint to check if the server is working or not.<br>
     No body is required for this endpoint.
 
+---
+---
+
 ### User routes: 
 
-**2. http://localhost:64000/api/v1/user/register/**
+**2. POST http://localhost:64000/api/v1/user/register/**
     This is the endpoint for registering a new user.
     
     
@@ -84,8 +87,9 @@ Or for normal run: `npm start `
         coverImage: imageFile
     }
     
+---
 
-**3. http://localhost:64000/api/v1/user/login/**<br>
+**3. POST http://localhost:64000/api/v1/user/login/**<br>
     This is the endpoint for logging in a user and sent the refresh token to the cookies.
     
     
@@ -94,7 +98,24 @@ Or for normal run: `npm start `
         password: String
     }
     
+---
 
+**4. POST http://localhost:64000/api/v1/user/refresh-token/**<br>
+    This is the endpoint for refreshing the access and refresh tokens.
+    
+    
+    body: {
+        refreshToken: String // can be present in the Authorization headers (Bearer ~token~) as well
+    }
+    
+---
+
+**5. POST http://localhost:64000/api/v1/user/logout/**<br>
+    This is the endpoint for logging out from the account(to delete tokens).
+    
+
+
+---
 ---
 
 ## 🧑‍💻 Author 
