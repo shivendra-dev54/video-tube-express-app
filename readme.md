@@ -63,12 +63,42 @@ Or for normal run: `npm start `
 
 ## 📬 API Endpoints
 
-> Not finalized yet. Will update as features are added.
+### Health Check:
+
+**1. http://localhost:64000/api/v1/healthcheck/**<br>
+    This is the endpoint to check if the server is working or not.<br>
+    No body is required for this endpoint.
+
+### User routes: 
+
+**2. http://localhost:64000/api/v1/user/register/**<br>
+    This is the endpoint for registering a new user.
+    <br>
+    ```json
+    body: {
+        fullName: String,
+        username: String,
+        email: String,
+        password: String,
+        avatar: imageFile,
+        coverImage: imageFile
+    }
+    ```
+
+**3. http://localhost:64000/api/v1/user/login/**<br>
+    This is the endpoint for logging in a user and sent the refresh token to the cookies.
+    <br>
+    ```json
+    body: {
+        email: String,
+        password: String
+    }
+    ```
 
 ---
 
 ## 🧑‍💻 Author 
-Shivendra Bhaginath Devadhe
+> Shivendra Bhaginath Devadhe
 
 Learning full-stack backend development Project inspired by Hitesh Choudhary’s Udemy course.
 
