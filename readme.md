@@ -113,6 +113,56 @@ Or for normal run: `npm start `
 **5. POST http://localhost:64000/api/v1/user/logout/**<br>
     This is the endpoint for logging out from the account(to delete tokens).
     
+---
+
+**6. POST http://localhost:64000/api/v1/user/change-password/**<br>
+    This is the endpoint for changing the current password of the user.
+    
+    
+    body: {
+        currentPassword: String,
+        newPassword: String
+    }
+
+--- 
+
+**7. GET http://localhost:64000/api/v1/user/current/**<br>
+    This is the endpoint for getting the current user details.<br>
+    It requires the user to be logged in.<br>
+    It returns the user details in the response.<br>
+    No body is required for this endpoint.
+
+--- 
+
+**8. PUT http://localhost:64000/api/v1/user/update-account-details/**<br>
+    This is the endpoint for updating the account details of the user.
+    
+    
+    body: {
+        fullName: String,
+        username: String,
+        email: String
+    }
+
+---
+
+**9. PUT http://localhost:64000/api/v1/user/update-avatar/**<br>
+    This is the endpoint for updating the avatar of the user.
+    
+    
+    body: {
+        avatar: imageFile
+    }
+
+---
+
+**10. PUT http://localhost:64000/api/v1/user/update-cover-image/**<br>
+    This is the endpoint for updating the cover image of the user.
+    
+    
+    body: {
+        coverImage: imageFile
+    }
 
 
 ---
