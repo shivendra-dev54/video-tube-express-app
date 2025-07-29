@@ -71,10 +71,10 @@ Or for normal run: `npm start `
 
 ### User routes: 
 
-**2. http://localhost:64000/api/v1/user/register/**<br>
+**2. http://localhost:64000/api/v1/user/register/**
     This is the endpoint for registering a new user.
-    <br>
-    ```json
+    
+    
     body: {
         fullName: String,
         username: String,
@@ -83,17 +83,17 @@ Or for normal run: `npm start `
         avatar: imageFile,
         coverImage: imageFile
     }
-    ```
+    
 
 **3. http://localhost:64000/api/v1/user/login/**<br>
     This is the endpoint for logging in a user and sent the refresh token to the cookies.
-    <br>
-    ```json
+    
+    
     body: {
         email: String,
         password: String
     }
-    ```
+    
 
 ---
 
