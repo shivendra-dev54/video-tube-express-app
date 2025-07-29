@@ -54,7 +54,7 @@ const userSchema = new Schema(
 
 // encrypting password
 userSchema.pre("save", async function(next){
-    if(!this.modified("password")) return next();
+    if(!this.isModified("password")) return next();
     this.password = await bcrypt.hash(this.password, 10);
     next();
 });
@@ -67,7 +67,7 @@ userSchema.methods.isPasswordCorrect = async function(password){
 
 
 // short lived access token
-userSchema.method.generateAccessToken = function(){
+userSchema.methods.generateAccessToken = function(){
     jwt.sign(
         {
             _id: this._id,  // professionally only this is needed others we can find with a query
@@ -84,7 +84,7 @@ userSchema.method.generateAccessToken = function(){
 
 
 // Refresh token
-userSchema.method.generateRefeshToken = function(){
+userSchema.methods.generateRefeshToken = function(){
     jwt.sign(
         {
             _id: this._id,  // professionally only this is needed others we can find with a query
