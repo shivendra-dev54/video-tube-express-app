@@ -37,27 +37,25 @@ Create a `.env` file in the root directory and add:
 
 `PORT=64000`
 `CORS_ORIGIN=*`
-`MONGODB_URI=mongodb://localhost:27017/youtube-clone JWT_SECRET=your_secret_key` 
+
+`MONGODB_URI=`
+
+`ACCESS_TOKEN_SECRET=""`
+`ACCESS_TOKEN_EXPIRY=1d`
+
+`REFRESH_TOKEN_SECRET=""`
+`REFRESH_TOKEN_EXPIRY=`
+
+`CLOUDINARY_NAME=`
+`CLOUDINARY_API_KEY=`
+`CLOUDINARY_API_SECRET=`
+
+`NODE_ENV=development`
 > You can change these values as per your setup.
 
 ### 4. Start the Server 
 For development (with `nodemon`): `npm run dev ` 
 Or for normal run: `npm start `
-
----
-
-## 📦 Available Scripts
-
-`npm run dev # Start server with nodemon npm start # Start server normally `
-
----
-
-## 📌 Features (Planned / WIP)
-
-- [x] User registration & login (JWT-based)
-- [ ] Video listing & watch
-- [ ] Like, comment, and subscribe system
-- [ ] Profile & channel management
 
 ---
 
@@ -134,7 +132,7 @@ Or for normal run: `npm start `
 
 --- 
 
-**8. PUT http://localhost:64000/api/v1/user/update-account-details/**<br>
+**8. PATCH http://localhost:64000/api/v1/user/update-account/**<br>
     This is the endpoint for updating the account details of the user.
     
     
@@ -146,7 +144,7 @@ Or for normal run: `npm start `
 
 ---
 
-**9. PUT http://localhost:64000/api/v1/user/update-avatar/**<br>
+**9. PATCH http://localhost:64000/api/v1/user/update-avatar/**<br>
     This is the endpoint for updating the avatar of the user.
     
     
@@ -156,7 +154,7 @@ Or for normal run: `npm start `
 
 ---
 
-**10. PUT http://localhost:64000/api/v1/user/update-cover-image/**<br>
+**10. PATCH http://localhost:64000/api/v1/user/update-cover-image/**<br>
     This is the endpoint for updating the cover image of the user.
     
     
@@ -164,6 +162,24 @@ Or for normal run: `npm start `
         coverImage: imageFile
     }
 
+---
+
+**11. GET http://localhost:64000/api/v1/user/channel/:username/**<br>
+    This is the endpoint for getting the user channel profile by username.
+    
+    
+    params: {
+        username: String
+    }
+    It returns the channel profile object in the response.<br>
+    No body is required for this endpoint.
+
+---
+
+**12. GET http://localhost:64000/api/v1/user/watch-history/**<br>
+    This is the endpoint for getting the current user's watch history.<br>
+    It returns the watch history array in the response.<br>
+    No body is required for this endpoint.
 
 ---
 ---

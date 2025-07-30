@@ -42,7 +42,7 @@ router.route("/current-user").get(
     verifyJWT,
     getCurrentUser
 );
-router.route("/update-account").put(
+router.route("/update-account").patch(
     verifyJWT,
     upload.fields([
         {
@@ -55,15 +55,23 @@ router.route("/update-account").put(
     ]),
     updateAccountDetails
 );
-router.route("/update-avatar").put(
+router.route("/update-avatar").patch(
     verifyJWT,
     upload.single("avatar"),
     updateUserAvatar
 );
-router.route("/update-cover-image").put(
+router.route("/update-cover-image").patch(
     verifyJWT,
     upload.single("coverImage"),
     updateUserCoverImage
+);
+router.route("/channel/:username").get(
+    verifyJWT,
+    getUserChannelProfile
+);
+router.route("/watch-history").get(
+    verifyJWT,
+    getWatchHistory
 );
 
 
